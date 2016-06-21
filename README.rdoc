@@ -24,5 +24,22 @@ Things you may want to cover:
 * ...
 
 
+A  project to save the phone numbers in ROR 
+		X====User====X
+User can sign up 
+User has multimedia login 
+Admin approved users can create phone book
+Users can manually enter phone numbers to phonebook
+User can sync their phonebook with social media and gmail, when they sync all contact from fb and mail are updated to phonebook (logged multimedia icons are displayed on 
+sync page and these credentials can used 
+to sync contact)
+Users can download the contact from the app in the form of csv, pdf,doc files
+Users can upload contact through csv file
+
+		X===Admin====X
+Admin can approve, create, block, delete users from the app
+Admin can do all the functionality 
+
+
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
