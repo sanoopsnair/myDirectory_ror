@@ -3,6 +3,9 @@ MyDirectoryRor::Application.routes.draw do
   root 'contacts#index'
 
   devise_for :users
+  
+  get 'find' => 'contacts#test'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -4,8 +4,32 @@ class ContactsController < ApplicationController
   respond_to :html
 
   def index
+    require 'net/http'
     @contacts = Contact.all
     respond_with(@contacts)
+    response = ''
+    # recent_posts = HTTParty.get ""
+    response = HTTParty.get('http://bots.meetpipe.com/api/searchhandle?caller=FB')
+    # response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
+    puts response
+    respond_to do |format|
+      # msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+      format.json  { render :json => response } # don't do msg.to_json
+    end
+
+
+    # recent_posts.posts.each do |post|
+    #   puts post.title #guessing
+    # end
+  end
+
+  def test
+    response = HTTParty.get('http://bots.meetpipe.com/api/searchhandle?caller=FB')
+    # puts response
+    res = {'re' => response, 'msg' => 'testing'}
+    respond_to do |format|
+      format.json  { render :json => res } # don't do msg.to_json
+    end
   end
 
   def show
